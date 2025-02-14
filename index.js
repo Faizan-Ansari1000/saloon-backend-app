@@ -16,9 +16,7 @@ app.use('/auth', authRoute);
 app.use('/user', userRoute);
 
 app.use((req, res, next) => {
-
-    req.setTimeout(0);
-    next();
+    next();  
 });
 
 
@@ -26,7 +24,15 @@ app.get('/', (req, res) => {
     res.send('Welcome to the Backend');
 });
 
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true })
+app.get('/test', (req, res) => {
+    res.send('API is working fine!');
+});
+
+mongoose.connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    serverSelectionTimeoutMS: 5000, 
+})
     .then(() => {
         console.log('MongoDB Connected');
         app.listen(PORT, () => {
