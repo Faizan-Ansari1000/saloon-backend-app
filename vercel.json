@@ -14,11 +14,6 @@
   ],
   "functions": {
     "index.js": {
-<<<<<<< HEAD
-      "maxDuration": 20
-=======
-      "maxDuration": 10
->>>>>>> f47454b (Fixed timeout issue)
     }
   }
 }
