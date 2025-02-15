@@ -16,9 +16,11 @@ app.use('/auth', authRoute);
 app.use('/user', userRoute);
 
 app.use((req, res, next) => {
-  req.setTimeout(0);
-  next();
+
+    req.setTimeout(0);
+    next();
 });
+
 
 app.get('/', (req, res) => {
     res.send('Welcome to the Backend');
